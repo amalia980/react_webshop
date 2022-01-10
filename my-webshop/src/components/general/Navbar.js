@@ -14,7 +14,9 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const handleBasketOpen = () => {
-        return basketOpen ? <button onClick={() => setBasketOpen(false)}>Hide Basket</button> : <button onClick={() => setBasketOpen(true)}>Show Basket</button>
+        return basketOpen ? 
+        <button className="btn-basket" onClick={() => setBasketOpen(false)}>Hide Basket</button> 
+        : <button className="btn-basket" onClick={() => setBasketOpen(true)}>Show Basket</button>
     }
 
     const handleLogout = () => {
@@ -27,12 +29,12 @@ const Navbar = () => {
         return (
             <nav className="nav">
                 <div>
-                    <Link to="/">Shop</Link>
-                    <Link to="/account">Account</Link>
-                    <Link to="/checkout">Checkout</Link>
+                    <Link className="link" to="/">Shop</Link>
+                    <Link className="link" to="/account">Account</Link>
+                    <Link className="link" to="/checkout">Checkout</Link>
                 </div>
 
-                <div className="nav">
+                <div>
                     { handleBasketOpen()}
                     <button onClick={handleLogout}>Logout</button>
                 </div>
@@ -44,10 +46,10 @@ const Navbar = () => {
         return (
             <nav className="nav">
                 <div>
-                    <Link to="/">Shop</Link>
-                    <Link to="/checkout">Checkout</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link className="link" to="/">Shop</Link>
+                    <Link className="link" to="/checkout">Checkout</Link>
+                    <Link className="link" to="/login">Login</Link>
+                    <Link className="link" to="/register">Register</Link>
                 </div>
                 <div>
                     {handleBasketOpen()}

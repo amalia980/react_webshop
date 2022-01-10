@@ -4,17 +4,20 @@ import Basket from '../general/Basket';
 import { useContext } from "react";
 import { BasketContext } from "../../context/BasketContext";
 import React from "react";
+import './Layout.css'
 
 const Layout = () => {
 
     const {basketOpen} = useContext(BasketContext);
 
     return (
-        <div>
+        <>
             { basketOpen && <Basket/>}
             <Navbar />
-            <Outlet />
+            <div className="wrapper">
+                <Outlet />
             </div>
+        </>
     )
 }
 

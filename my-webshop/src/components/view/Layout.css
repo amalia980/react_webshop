@@ -1,0 +1,13 @@
+/*Layout*/
+.wrapper {
+    margin: 5rem 10rem 5rem 10rem;
+}
+
+/*Register & Login*/
+.form-wrapper {
+    width: 15rem;
+}
+
+.input {
+    margin-bottom: 0.5rem;
+}

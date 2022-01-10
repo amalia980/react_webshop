@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate, useParams } from "react-router-dom";
+import './Layout.css'
 
 const Login = () => {
 
@@ -27,14 +28,16 @@ const Login = () => {
     }
 
     return (
-        <>
-            <h1>Login</h1>
-            <form onSubmit={handleLoginUser}>
-                <input name="username" type="text" placeholder="Username..." onChange={handleInput}/>
-                <input name="password" type="text" placeholder="Password..." onChange={handleInput}/>
+        <div>
+            <div>
+                <h1>Login</h1>
+            </div>
+            <form className="form-wrapper" onSubmit={handleLoginUser}>
+                <input className="input" name="username" type="text" placeholder="Username..." onChange={handleInput}/>
+                <input className="input" name="password" type="text" placeholder="Password..." onChange={handleInput}/>
                 <button type="submit">Login</button>
             </form>
-        </>
+        </div>
     )
 }
 

@@ -1,4 +1,6 @@
 .basket {
     padding: 20px 10px;
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid white;
+    background-color: #18191a;
+    color: white;
 }
