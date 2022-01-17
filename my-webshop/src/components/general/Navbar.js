@@ -9,7 +9,7 @@ import React from "react";
 const Navbar = () => {
 
     const {loggedIn, setLoggedIn, setUser} = useContext(UserContext);
-    const {basketOpen, setBasketOpen} = useContext(BasketContext);
+    const {basket, basketOpen, setBasketOpen} = useContext(BasketContext);
 
     const navigate = useNavigate();
 
@@ -35,6 +35,7 @@ const Navbar = () => {
                 </div>
 
                 <div>
+                    <span className="items-qty">Items: {basket.length}</span>
                     { handleBasketOpen()}
                     <button onClick={handleLogout}>Logout</button>
                 </div>
@@ -52,6 +53,7 @@ const Navbar = () => {
                     <Link className="link" to="/register">Register</Link>
                 </div>
                 <div>
+                <span className="items-qty">Items: {basket.length}</span>
                     {handleBasketOpen()}
                 </div>
             </nav>

@@ -1,12 +1,12 @@
 import React from "react";
-
+import Products from "../general/Products";
 
 const Shop = () => {
 
     return (
         <>
             <h1>Shop</h1>
-            <p>producst coming soon...</p>
+            <Products />
         </>
     )
 }

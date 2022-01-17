@@ -7,6 +7,8 @@ import Checkout from './components/view/Checkout'
 import Login from './components/view/Login'
 import Register from './components/view/Register'
 import React from "react";
+import PrivateRoute from './components/hocs/PrivateRoute';
+import UnPrivateRoute from './components/hocs/UnPrivateRoute';
 
 
 
@@ -16,10 +18,22 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Shop />} />
-            <Route path="account" element={<Account/>} />
+            <Route path="account" element={
+              <PrivateRoute> 
+                <Account/>
+              </PrivateRoute>
+              }/>
             <Route path="checkout" element={<Checkout/>}/>
-            <Route path="login" element={<Login/>} />
-            <Route path="login/:firstname/:lastname" element={<Login/>} />
+            <Route path="login" element={
+              <UnPrivateRoute>
+                <Login/>
+              </UnPrivateRoute>
+              }/>
+            <Route path="login/:firstname/:lastname" element={
+            <UnPrivateRoute>
+              <Login/>
+                </UnPrivateRoute>
+              }/>
             <Route path="register" element={<Register/>} />
 
           </Route>

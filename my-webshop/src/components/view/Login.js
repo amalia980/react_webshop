@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate, useParams } from "react-router-dom";
 import './Layout.css'
+import generalAddress from "../../services/addressService";
 
 const Login = () => {
 
@@ -22,8 +23,8 @@ const Login = () => {
         e.preventDefault();
         setLoggedIn(true);
         firstname && lastname 
-        ? setUser({...loginUser, firstname, lastname}) 
-        : setUser({...loginUser, firstname: "Amy", lastname: "Lizar"}); 
+        ? setUser({...loginUser, ...generalAddress, firstname, lastname, password: "",}) 
+        : setUser({...loginUser, ...generalAddress, firstname: "Amy", lastname: "Lizar", password: "",}); 
         navigate("/account");
     }
 
